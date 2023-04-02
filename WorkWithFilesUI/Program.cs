@@ -13,8 +13,7 @@ namespace WorkWithFilesUI
             string path2 = @"c:\Otus\TestDir2";
             try
             {
-                Directory.Delete(path1, true);
-                Directory.Delete(path2, true);
+                
                 if (!Directory.Exists(path1))
                 {
                     DirectoryInfo directoryInfo1 = Directory.CreateDirectory(path1);
@@ -34,13 +33,13 @@ namespace WorkWithFilesUI
                         writer.Write(fileName1 + " " + DateTime.Now.ToString());
                        
                     }
+
                     string fileName2 = Path.Combine(path2, $"TestFile{i}.txt");
                     using (StreamWriter writer = new StreamWriter(fileName2, false, Encoding.UTF8))
                     {
                         writer.Write(fileName2 + " " + DateTime.Now.ToString());
                     }
                 }
-
                 string[] files1 = Directory.GetFiles(path1);
                 Console.WriteLine("Files in directory {0}",path1);
 
